@@ -125,3 +125,61 @@
         updateTimer();
         setInterval(updateTimer, 1000);
     })();
+
+
+   // ===== Слайдер программы с анимацией снизу вверх =====
+(function() {
+    const track = document.getElementById('programSliderTrack');
+    const dotsContainer = document.getElementById('programDotsContainer');
+
+    if (!track) return;
+
+    const cards = track.querySelectorAll('.module-card-zigzag');
+    const cardCount = cards.length;
+    let currentIndex = 0;
+
+    // Создаём точки
+    for (let i = 0; i < cardCount; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('program-dot');
+        dot.dataset.index = i;
+        dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.program-dot');
+
+    function goTo(index) {
+        if (index < 0) index = cardCount - 1;
+        if (index >= cardCount) index = 0;
+        currentIndex = index;
+
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+
+        cards.forEach(card => card.classList.remove('slide-up'));
+        void cards[currentIndex].offsetWidth;
+        cards[currentIndex].classList.add('slide-up');
+    }
+
+    // Клик по точке
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.dataset.index);
+            goTo(index);
+        });
+    });
+
+    // *** НОВОЕ: клик по карточке → следующий слайд ***
+    cards.forEach((card) => {
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.program-dot')) return;
+            goTo((currentIndex + 1) % cardCount);
+        });
+    });
+
+    // Старт
+    goTo(0);
+})();
