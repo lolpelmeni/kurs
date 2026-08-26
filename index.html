@@ -6,47 +6,40 @@
     <title>Экспресс-курс по дизайну карточек</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <!-- БЛОК 1: ШАПКА-->
-
-    <section class="section">
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-
-        <div class="blob blob-left"></div>
-        <div class="blob blob-right"></div>
-        <div class="blob blob-center"></div>
-
-        <div class="content">
-            <div class="hero-wrapper">
-                <div class="hero-left">
-                    <div class="badge">✨ ЭКСПРЕСС-КУРС</div>
-                    <h1>
-                        Научись создавать <span class="highlight">карточки</span><br />
-                        для маркетплейсов и зарабатывай<br />
-                        от 50 000₽ за 2 месяца
-                    </h1>
-                    <p class="subhead">
-                        Практика на реальных брендах, обратная связь по каждому заданию, поддержка в закрытом чате.
-                    </p>
-                    <div class="btn-group">
-                        <a href="https://web.telegram.org/k/#@bakush1n" class="btn">Записаться →</a>
-                        <a href="#" class="btn btn-outline">Программа</a>
-                    </div>
-                    <div class="market-icons">
-                        <div class="icon icon-wb"><img src="./img/wb.png" alt="Wildberries"></div>
-                        <div class="icon icon-oz"><img src="./img/ozon.png" alt="Ozon"></div>
-                        <div class="icon icon-oz"><img src="./img/market.png" alt="Market"></div>
-                    </div>
+   <!-- БЛОК 1: ШАПКА -->
+<section class="section">
+    <!-- ... декоративные элементы ... -->
+    <div class="content">
+        <div class="hero-wrapper">
+            <div class="hero-left">
+                <!-- Текстовая часть остаётся без изменений -->
+                <div class="badge">✨ ЭКСПРЕСС-КУРС</div>
+                <h1>
+                    Научись создавать <span class="highlight">карточки</span><br />
+                    для маркетплейсов и зарабатывай<br />
+                    от 50 000₽ за 2 месяца
+                </h1>
+                <p class="subhead">
+                    Практика на реальных брендах, обратная связь по каждому заданию, поддержка в закрытом чате.
+                </p>
+                <div class="btn-group">
+                    <a href="https://web.telegram.org/k/#@bakush1n" class="btn">Записаться →</a>
+                    <a href="#program" class="btn btn-outline">Программа</a>
                 </div>
+                <div class="market-icons">
+                    <div class="icon icon-wb"><img src="./img/wb.png" alt="Wildberries"></div>
+                    <div class="icon icon-oz"><img src="./img/ozon.png" alt="Ozon"></div>
+                    <div class="icon icon-oz"><img src="./img/market.png" alt="Market"></div>
+                </div>
+            </div>
 
-                <div class="hero-right">
-                    <div class="photo-frame">
-                        <img class="author-photo" src="./img/dimaGl.png" alt="Дмитрий Бакушин" />
-                    </div>
+            <div class="hero-right">
+                <div class="photo-frame">
+                    <img class="author-photo" src="./img/dimaGl.png" alt="Дмитрий Бакушин" />
+                    <!-- Оверлей перенесён внутрь photo-frame -->
                     <div class="author-info-overlay">
                         <div class="name">Дмитрий Бакушин</div>
                         <div class="title">Основатель курса, дизайнер-эксперт</div>
@@ -58,7 +51,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- БЛОК 2: СЛАЙДЕР С ИСТОРИЯМИ УЧЕНИКОВ-->
     <section class="section">
@@ -249,8 +243,8 @@
         </div>
     </section>
 
-<!-- БЛОК 5: ПРОГРАММА КУРСА (зигзаг, тёмные тона)-->
-<section class="section section-dark">
+<!-- БЛОК 5: ПРОГРАММА КУРСА (слайдер с анимацией) -->
+<section class="section section-dark" id="program">
     <div class="corner corner-tl"></div>
     <div class="corner corner-tr"></div>
     <div class="corner corner-bl"></div>
@@ -264,129 +258,137 @@
         <h2 class="section-title">Программа курса: <span>7 дней до результата</span></h2>
         <div class="section-sub">📅 Каждый день — новый модуль с практикой и домашним заданием</div>
 
-        <div class="program-grid-zigzag">
-            <!-- Модуль 1 (нечётный, слева) -->
-            <div class="module-card-zigzag">
-                <div class="module-header-zigzag">
-                    <span class="module-number-zigzag">01</span>
-                    <span class="module-icon-zigzag"><img src="./img/rocket.png" alt=""></span>
-                    <span class="module-title-zigzag">Погружение в тему карточек</span>
+        <!-- Слайдер программы -->
+        <div class="program-slider-container">
+            <div class="program-slider-track" id="programSliderTrack">
+                <!-- Модуль 1 -->
+                <div class="module-card-zigzag slide-up">
+                    <div class="module-header-zigzag">
+                        <span class="module-number-zigzag">01</span>
+                        <span class="module-icon-zigzag"><img src="./img/rocket.png" alt=""></span>
+                        <span class="module-title-zigzag">Погружение в тему карточек</span>
+                    </div>
+                    <ul class="module-list-zigzag">
+                        <li>Вводный урок: кто я и зачем создан этот курс</li>
+                        <li>Программа и как пройдут 7 дней</li>
+                        <li>Бонусные дни</li>
+                        <li>Формат обучения и личная поддержка</li>
+                        <li>Как проходить курс, чтобы выйти к результату</li>
+                    </ul>
+                    <div class="module-footer-zigzag">
+                        <span class="module-dz-zigzag">📝 ДЗ: нет</span>
+                    </div>
                 </div>
-                <ul class="module-list-zigzag">
-                    <li>Вводный урок: кто я и зачем создан этот курс</li>
-                    <li>Программа и как пройдут 7 дней</li>
-                    <li>Бонусные дни</li>
-                    <li>Формат обучения и личная поддержка</li>
-                    <li>Как проходить курс, чтобы выйти к результату</li>
-                </ul>
-                <div class="module-footer-zigzag">
-                    <span class="module-dz-zigzag">📝 ДЗ: нет</span>
+
+                <!-- Модуль 2 -->
+                <div class="module-card-zigzag">
+                    <div class="module-header-zigzag">
+                        <span class="module-number-zigzag">02</span>
+                        <span class="module-icon-zigzag"><img src="./img/palitra.png" alt=""></span>
+                        <span class="module-title-zigzag">Основы работы дизайнера</span>
+                    </div>
+                    <ul class="module-list-zigzag">
+                        <li>Определение и суть дизайна карточек</li>
+                        <li>Почему это востребовано</li>
+                        <li>Ошибки продавцов без дизайна</li>
+                        <li>Возможности заработка для дизайнеров</li>
+                        <li>Выводы</li>
+                    </ul>
+                    <div class="module-footer-zigzag">
+                        <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
+                    </div>
+                </div>
+
+                <!-- Модуль 3 -->
+                <div class="module-card-zigzag">
+                    <div class="module-header-zigzag">
+                        <span class="module-number-zigzag">03</span>
+                        <span class="module-icon-zigzag"><img src="./img/kist.png" alt=""></span>
+                        <span class="module-title-zigzag">Гайд по фотошопу от А до Я</span>
+                    </div>
+                    <ul class="module-list-zigzag">
+                        <li>Создание идеальной рабочей среды</li>
+                        <li>Оптимизация</li>
+                        <li>Удаление фона</li>
+                        <li>Инструменты и верхняя панель</li>
+                    </ul>
+                    <div class="module-footer-zigzag">
+                        <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
+                    </div>
+                </div>
+
+                <!-- Модуль 4 -->
+                <div class="module-card-zigzag">
+                    <div class="module-header-zigzag">
+                        <span class="module-number-zigzag">04</span>
+                        <span class="module-icon-zigzag"><img src="./img/meshok.png" alt=""></span>
+                        <span class="module-title-zigzag">Продающий дизайн</span>
+                    </div>
+                    <ul class="module-list-zigzag">
+                        <li>Композиция + практика</li>
+                        <li>Типографика + практика</li>
+                        <li>Колористика + практика</li>
+                        <li>Базовые свет и тени + практика</li>
+                    </ul>
+                    <div class="module-footer-zigzag">
+                        <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
+                    </div>
+                </div>
+
+                <!-- Модуль 5 -->
+                <div class="module-card-zigzag">
+                    <div class="module-header-zigzag">
+                        <span class="module-number-zigzag">05</span>
+                        <span class="module-icon-zigzag"><img src="./img/papka.png" alt=""></span>
+                        <span class="module-title-zigzag">Портфолио и клиенты</span>
+                    </div>
+                    <ul class="module-list-zigzag">
+                        <li>Как создавать портфолио, какое оно должно быть</li>
+                        <li>Как упаковать свой профиль</li>
+                        <li>20 актуальных способов на рынке</li>
+                    </ul>
+                    <div class="module-footer-zigzag">
+                        <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
+                    </div>
+                </div>
+
+                <!-- Модуль 6 -->
+                <div class="module-card-zigzag">
+                    <div class="module-header-zigzag">
+                        <span class="module-number-zigzag">06</span>
+                        <span class="module-icon-zigzag"><img src="./img/neiro.png" alt=""></span>
+                        <span class="module-title-zigzag">Нейросети</span>
+                    </div>
+                    <ul class="module-list-zigzag">
+                        <li>Сервисы и нейросети для дизайнера</li>
+                        <li>Как правильно писать промты</li>
+                        <li>Как улучшить качество товара</li>
+                        <li>Как вырезать товар без потери качества</li>
+                    </ul>
+                    <div class="module-footer-zigzag">
+                        <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
+                    </div>
+                </div>
+
+                <!-- Модуль 7 -->
+                <div class="module-card-zigzag">
+                    <div class="module-header-zigzag">
+                        <span class="module-number-zigzag">07</span>
+                        <span class="module-icon-zigzag"><img src="./img/star.png" alt=""></span>
+                        <span class="module-title-zigzag">Практика</span>
+                    </div>
+                    <ul class="module-list-zigzag">
+                        <li>Поэтапная карточка из 5 слайдов в стиле минимализма</li>
+                    </ul>
+                    <div class="module-footer-zigzag">
+                        <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Модуль 2 (чётный, справа) -->
-            <div class="module-card-zigzag">
-                <div class="module-header-zigzag">
-                    <span class="module-number-zigzag">02</span>
-                    <span class="module-icon-zigzag"><img src="./img/palitra.png" alt=""></span>
-                    <span class="module-title-zigzag">Основы работы дизайнера</span>
-                </div>
-                <ul class="module-list-zigzag">
-                    <li>Определение и суть дизайна карточек</li>
-                    <li>Почему это востребовано</li>
-                    <li>Ошибки продавцов без дизайна</li>
-                    <li>Возможности заработка для дизайнеров</li>
-                    <li>Выводы</li>
-                </ul>
-                <div class="module-footer-zigzag">
-                    <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
-                </div>
-            </div>
-
-            <!-- Модуль 3 (нечётный, слева) -->
-            <div class="module-card-zigzag">
-                <div class="module-header-zigzag">
-                    <span class="module-number-zigzag">03</span>
-                    <span class="module-icon-zigzag"><img src="./img/kist.png" alt=""></span>
-                    <span class="module-title-zigzag">Гайд по фотошопу от А до Я</span>
-                </div>
-                <ul class="module-list-zigzag">
-                    <li>Создание идеальной рабочей среды</li>
-                    <li>Оптимизация</li>
-                    <li>Удаление фона</li>
-                    <li>Инструменты и верхняя панель</li>
-                </ul>
-                <div class="module-footer-zigzag">
-                    <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
-                </div>
-            </div>
-
-            <!-- Модуль 4 (чётный, справа) -->
-            <div class="module-card-zigzag">
-                <div class="module-header-zigzag">
-                    <span class="module-number-zigzag">04</span>
-                    <span class="module-icon-zigzag"><img src="./img/meshok.png" alt=""></span>
-                    <span class="module-title-zigzag">Продающий дизайн</span>
-                </div>
-                <ul class="module-list-zigzag">
-                    <li>Композиция + практика</li>
-                    <li>Типографика + практика</li>
-                    <li>Колористика + практика</li>
-                    <li>Базовые свет и тени + практика</li>
-                </ul>
-                <div class="module-footer-zigzag">
-                    <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
-                </div>
-            </div>
-
-            <!-- Модуль 5 (нечётный, слева) -->
-            <div class="module-card-zigzag">
-                <div class="module-header-zigzag">
-                    <span class="module-number-zigzag">05</span>
-                    <span class="module-icon-zigzag"><img src="./img/papka.png" alt=""></span>
-                    <span class="module-title-zigzag">Портфолио и клиенты</span>
-                </div>
-                <ul class="module-list-zigzag">
-                    <li>Как создавать портфолио, какое оно должно быть</li>
-                    <li>Как упаковать свой профиль</li>
-                    <li>20 актуальных способов на рынке</li>
-                </ul>
-                <div class="module-footer-zigzag">
-                    <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
-                </div>
-            </div>
-
-            <!-- Модуль 6 (чётный, справа) -->
-            <div class="module-card-zigzag">
-                <div class="module-header-zigzag">
-                    <span class="module-number-zigzag">06</span>
-                    <span class="module-icon-zigzag"><img src="./img/neiro.png" alt=""></span>
-                    <span class="module-title-zigzag">Нейросети</span>
-                </div>
-                <ul class="module-list-zigzag">
-                    <li>Сервисы и нейросети для дизайнера</li>
-                    <li>Как правильно писать промты</li>
-                    <li>Как улучшить качество товара</li>
-                    <li>Как вырезать товар без потери качества</li>
-                </ul>
-                <div class="module-footer-zigzag">
-                    <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
-                </div>
-            </div>
-
-            <!-- Модуль 7 (нечётный, слева) -->
-            <div class="module-card-zigzag">
-                <div class="module-header-zigzag">
-                    <span class="module-number-zigzag">07</span>
-                    <span class="module-icon-zigzag"><img src="./img/star.png" alt=""></span>
-                    <span class="module-title-zigzag">Практика</span>
-                </div>
-                <ul class="module-list-zigzag">
-                    <li>Поэтапная карточка из 5 слайдов в стиле минимализма</li>
-                </ul>
-                <div class="module-footer-zigzag">
-                    <span class="module-dz-zigzag has-dz">📝 ДЗ: есть</span>
-                </div>
+            <!-- Управление -->
+            <div class="program-slider-controls">
+                <div class="program-dots" id="programDotsContainer"></div>
             </div>
         </div>
     </div>
@@ -452,7 +454,7 @@
 
         <!-- Кнопка -->
         <div style="text-align: center; margin-top: 48px;">
-            <a href="#" class="btn btn-large-warm">Хочу заказать!</a>
+            <a href="https://t.me/m/GMy7KPBdOTEy" class="btn btn-large-warm">Хочу заказать!</a>
         </div>
     </div>
 </section>
@@ -506,7 +508,7 @@
             </div>
 
             <div class="bonus-cta">
-                <a href="#" class="btn btn-bonus">Записаться со всеми бонусами →</a>
+                <a href="https://t.me/m/uQsSUX0HMDZi" class="btn btn-bonus">Записаться со всеми бонусами →</a>
             </div>
         </div>
     </div>
@@ -571,7 +573,7 @@
             </div>
             <div class="tariff-item-dark">
                 <span class="tariff-check-dark">✓</span>
-                <span class="tariff-text-dark">Бессрочный доступ к спринту</span>
+                <span class="tariff-text-dark">Бессрочный доступ к экспрессу</span>
             </div>
         </div>
 
@@ -596,7 +598,7 @@
                 </div>
                 <div class="bonus-item-dark highlight">
                     <span class="bonus-badge-dark">🔥</span>
-                    <span class="bonus-text-dark">Доступ в закрытый чат с клиентами <span style="color: rgba(245,237,231,0.4); font-weight: 400;">(для учеников, сделавших все задания спринта)</span></span>
+                    <span class="bonus-text-dark">Доступ в закрытый чат с клиентами <span style="color: rgba(245,237,231,0.4); font-weight: 400;">(для учеников, сделавших все задания экспресса)</span></span>
                 </div>
             </div>
         </div>
@@ -610,22 +612,22 @@
                 </div>
                 <div class="price-current-dark">
                     <span class="price-current-label-dark">от</span>
-                    <span class="price-current-value-dark">7 500₽</span>
+                    <span class="price-current-value-dark">6 990₽</span>
                 </div>
                 <div class="price-per-month-dark">
-                    <span class="per-month-value-dark">830₽</span>
+                    <span class="per-month-value-dark">750₽</span>
                     <span class="per-month-label-dark">/мес</span>
                 </div>
             </div>
             <div class="price-return-dark">
                 <span class="return-icon-dark">💰</span>
-                <span class="return-text-dark">≈2–3 заказа на дизайне карточек и ты окупишь участие в спринте</span>
+                <span class="return-text-dark">≈2–3 заказа на дизайне карточек и ты окупишь участие в экспрессе</span>
             </div>
         </div>
 
         <!-- Кнопка -->
         <div class="tariff-cta-dark">
-            <a href="#" class="btn btn-tariff-dark">ОПЛАТИТЬ ОБУЧЕНИЕ</a>
+            <a href="https://t.me/m/Jm2L6wlnOTky" class="btn btn-tariff-dark">ОПЛАТИТЬ ОБУЧЕНИЕ</a>
         </div>
     </div>
 </section>
@@ -665,12 +667,12 @@
 
         <!-- Подзаголовок -->
         <p class="start-sub-warm">
-            Проходи спринт, получай результат, находи первых клиентов — и только потом начнёшь платить
+            Проходи экспресс, получай результат, находи первых клиентов — и только потом начнёшь платить
         </p>
 
         <!-- Кнопка -->
         <div class="start-cta-warm">
-            <a href="#" class="btn btn-start-warm">ГОТОВ НАЧАТЬ!</a>
+            <a href="https://t.me/m/Jm2L6wlnOTky" class="btn btn-start-warm">ГОТОВ НАЧАТЬ!</a>
         </div>
 
         <!-- Разделитель -->
@@ -682,8 +684,8 @@
 
         <!-- Поддержка -->
         <div class="start-support-warm">
-            <div class="support-label-warm">Возникли трудности или остались вопросы по спринту?</div>
-            <a href="#" class="btn btn-support-warm">СЛУЖБА ПОДДЕРЖКИ</a>
+            <div class="support-label-warm">Возникли трудности или остались вопросы по экспрессу?</div>
+            <a href="https://web.telegram.org/k/#@bakushin_support" class="btn btn-support-warm">СЛУЖБА ПОДДЕРЖКИ</a>
         </div>
     </div>
 </section>
@@ -747,11 +749,48 @@
 
         <!-- Кнопки -->
         <div class="final-buttons">
-            <a href="#" class="btn btn-final-primary">Стать востребованным дизайнером</a>
-            <a href="#" class="btn btn-final-secondary">Задать вопрос по мини-курсу</a>
+            <a href="https://t.me/m/Jm2L6wlnOTky" class="btn btn-final-primary">Стать востребованным дизайнером</a>
+            <a href="https://web.telegram.org/k/#@bakushin_support" class="btn btn-final-secondary">Задать вопрос по мини-курсу</a>
         </div>
     </div>
 </section>
+
+<!-- БЛОК 11: ОТЗЫВЫ -->
+<section class="section section-reviews">
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <div class="blob blob-left"></div>
+    <div class="blob blob-right"></div>
+    <div class="blob blob-center"></div>
+
+    <div class="content">
+        <h2 class="section-title">Отзывы <span>моих учеников</span></h2>
+        <div class="reviews-grid">
+            <div class="review-card review-1">
+                <img src="./img/otz1.jpg" alt="Отзыв 1">
+            </div>
+            <div class="review-card review-2">
+                <img src="./img/otz2.jpg" alt="Отзыв 2">
+            </div>
+            <div class="review-card review-3">
+                <img src="./img/otz3.jpg" alt="Отзыв 3">
+            </div>
+            <div class="review-card review-4">
+                <img src="./img/otz4.jpg" alt="Отзыв 4">
+            </div>
+            <div class="review-card review-5">
+                <img src="./img/otx5.jpg" alt="Отзыв 5">
+            </div>
+            <div class="review-card review-6">
+                <img src="./img/otz6.jpg" alt="Отзыв 5">
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- СКРИПТ -->
     <script src="./script.js"></script>
 </body>
